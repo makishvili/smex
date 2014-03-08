@@ -1,5 +1,13 @@
+var http = require('http');
+
 module.exports = function (pages) {
     pages.declare('index-page', function (params) {
+
+        // здесь огромный кусок кода
+
+
+
+
         var options = params.options;
         return {
             block: 'page',
