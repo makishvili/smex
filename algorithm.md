@@ -44,7 +44,10 @@
 
 `make bookfb2`
 ==============
-1. Прочитать конфиг, найти все объекты с `published: true`
 
-2. Сформировать пути к плохому html каждой книги: `/Users/makishvili/Yandex.Disk/StoryMill/sm-export/ + id + .html`
+1. сэмулировать запрос из браузера
+
+2. Прочитать конфиг, найти все объекты с `published: true`
+
+3. Сформировать пути к json каждой книги: `/Users/makishvili/Yandex.Disk/StoryMill/sm-import/ + id + .json`
 
