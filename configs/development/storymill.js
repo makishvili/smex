@@ -48,31 +48,41 @@ module.exports = {
             id: 'cold',
             title: 'Холодно',
             completed: 'yes',
-            published: 'yes'
+            published: 'yes',
+            month: 'Февраль',
+            year: '2011'
         },
         {
             id: 'kush',
             title: 'Сандалики на тонком ремешке',
             completed: 'yes',
-            published: 'yes'
+            published: 'yes',
+            month: 'Июль',
+            year: '2011'
         },
         {
             id: 'signs',
             title: 'Знаки',
             completed: 'yes',
-            published: 'yes'
+            published: 'yes',
+            month: 'Август',
+            year: '2011'
         },
         {
             id: 'cry',
             title: 'Время, когда плакать можно',
             completed: 'yes',
-            published: 'yes'
+            published: 'yes',
+            month: 'Июль',
+            year: '2012'
         },
         {
             id: 'dog',
             title: 'Убей собаку!',
             completed: 'yes',
-            published: 'yes'
+            published: 'yes',
+            month: 'Апрель',
+            year: '2013'
         },
         {
             id: 'in-the-car',

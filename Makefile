@@ -50,16 +50,16 @@ app-dev:
 
 # Convert dirty storymill's html to json
 .PHONY: bookjson
-block:
+bookjson:
 	./tools/make-bookjson.sh
 
 # Make pdf for all my books
 .PHONY: bookpdf
-block:
+bookpdf:
 	./tools/make-bookpdf.sh
 
 # Make fb2 for all my books
 .PHONY: bookfb2
-block:
+bookfb2:
 	./tools/make-bookfb2.sh
 
