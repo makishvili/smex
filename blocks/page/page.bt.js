@@ -20,7 +20,8 @@ module.exports = function (bt) {
                     elem: 'css',
                     url: style.url,
                     ie: style.ie,
-                    media: style.media
+                    media: style.media,
+                    rules: style.rules
                 };
             });
         }
@@ -136,6 +137,7 @@ module.exports = function (bt) {
         ctx.disableCssClassGeneration();
         var url = ctx.getParam('url');
         var media = ctx.getParam('media');
+        var rules = ctx.getParam('rules');
 
         if (url) {
             ctx.setTag('link');
@@ -143,6 +145,7 @@ module.exports = function (bt) {
             ctx.setAttr('href', url);
         } else {
             ctx.setTag('style');
+            ctx.setContent(rules);
         }
 
         if (media) {

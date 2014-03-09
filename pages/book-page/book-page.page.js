@@ -1,18 +1,9 @@
-var jspath = require("jspath");
-var toc = require('storymill/list');
-var smCfg = require('storymill/config').get('storymill');
-
 module.exports = function (pages) {
-    pages.declare('index-page', function (params) {
+    pages.declare('book-page', function (params) {
         var options = params.options;
-
-        var projectUrls = smCfg.project;
-        var booksList = toc.getBookList(projectUrls);
-        var publishedBooksList = jspath.apply('.{.published === "yes"}', booksList);
-
         return {
             block: 'page',
-            title: 'Повести и рассказы - Вадим Макишвили',
+            title: 'Книга',
             meta: [
                 // http://t.co/dKP3o1e
                 {
@@ -32,9 +23,6 @@ module.exports = function (pages) {
                 {
                     url: '/octopress/stylesheets/screen.css',
                     media: 'screen, projection'
-                },
-                {
-                    rules : '.category {text-align: left;} .day, .month, .year {font-size: 17px; color: #aaa; display: inline;}'
                 }
             ],
             scripts: [
@@ -43,20 +31,7 @@ module.exports = function (pages) {
                 {url: '/octopress/javascripts/octopress.js'}
             ],
             body: [
-                {
-                    block: 'header'
-                },
-                {
-                    block: 'nav'
-                },
-                {
-                    block: 'books',
-                    title: 'Повести и рассказы',
-                    list: publishedBooksList
-                },
-                {
-                    block: 'footer'
-                }
+                // здесь ваши блоки
             ]
         };
     });
