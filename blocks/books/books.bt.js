@@ -17,12 +17,21 @@ module.exports = function (bt) {
     });
 
     bt.match('books__title', function (ctx) {
-        ctx.setTag('h1');
+        ctx.setTag('article');
+        ctx.setAttr('role', 'article');
 
-        ctx.setContent(ctx.getParam('content'));
+        ctx.setContent(
+            '<header>' +
+                '<h1>' +
+                    ctx.getParam('content') +
+                '</h1>' +
+            '</header>'
+        );
     });
 
     bt.match('books__list', function (ctx) {
+
+        ctx.setAttr('id', 'blog-archives');
 
         var list = ctx.getParam('rawList').map(function (book) {
             return {
