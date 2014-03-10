@@ -1,0 +1,118 @@
+module.exports = {
+    author : {
+        nickName: 'makishvili',
+        shortName: 'Вадим Макишвили',
+        firstName: 'Вадим',
+        middleName: 'Юрьевич',
+        lastName: 'Макишвили'
+    },
+    project : {
+        root: '/Users/makishvili/projects/storymill-export/',
+        import: '/Users/makishvili/Yandex.Disk/StoryMill/sm-import/',
+        export: '/Users/makishvili/Yandex.Disk/StoryMill/sm-export/'
+    },
+    pdfPrinter: {
+        default: 'apachefop',
+//        default: 'wkhtmltopdf',
+
+        apachefop: {
+            conf: '/Applications/Apache\\ FOP/fop-1.1/fop.xconf'
+        },
+        wkhtmltopdf: {
+            params: {
+                global: {
+                    '--print-media-type': '',
+                    '--header-font-name': 'Times',
+                    '--footer-font-name': 'Times',
+                    '--header-font-size': '8',
+                    '--footer-font-size': '8',
+                    '--header-spacing': '4',
+                    '--footer-spacing': '4',
+                    '--footer-center': '[page]/[toPage]',
+                    '--header-right': 'makishvili.com/proza/%fileName%.html',
+                },
+                toc: {
+                    '--xsl-style-sheet': '%projectPath%node_modules/storymill/wkhtmltopdf.toc.xsl'
+                }
+            }
+        }
+    },
+    bookList: [
+        {
+            id: 'childhood',
+            title: 'Последний вечер детства',
+            completed: 'yes',
+            published: 'no'
+        },
+        {
+            id: 'cold',
+            title: 'Холодно',
+            completed: 'yes',
+            published: 'yes',
+            month: 'Февраль',
+            year: '2011'
+        },
+        {
+            id: 'kush',
+            title: 'Сандалики на тонком ремешке',
+            completed: 'yes',
+            published: 'yes',
+            month: 'Июль',
+            year: '2011'
+        },
+        {
+            id: 'signs',
+            title: 'Знаки',
+            completed: 'yes',
+            published: 'yes',
+            month: 'Август',
+            year: '2011'
+        },
+        {
+            id: 'cry',
+            title: 'Время, когда плакать можно',
+            completed: 'yes',
+            published: 'yes',
+            month: 'Июль',
+            year: '2012'
+        },
+        {
+            id: 'dog',
+            title: 'Убей собаку!',
+            completed: 'yes',
+            published: 'yes',
+            month: 'Апрель',
+            year: '2013'
+        },
+        {
+            id: 'in-the-car',
+            title: 'Ребенок в машине',
+            completed: 'no',
+            published: 'no'
+        },
+        {
+            id: 'lift',
+            title: 'Лифт',
+            completed: 'no',
+            published: 'no'
+        },
+        {
+            id: 'mall',
+            title: 'Стрельба в Европейском',
+            completed: 'no',
+            published: 'no'
+        },
+        {
+            id: 'crocodile',
+            title: 'Крокодил',
+            completed: 'no',
+            published: 'no'
+        },
+        {
+            id: 'water',
+            title: 'Достать воды',
+            completed: 'no',
+            published: 'no'
+        },
+    ]
+};

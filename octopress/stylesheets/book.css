@@ -1,0 +1,222 @@
+.b-story__title {
+    color: #000;
+
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-size: 56px;
+
+    font-weight: bold;
+
+    line-height: 56px;
+    margin-bottom: 56px;
+
+    text-align: center;
+    vertical-align: baseline;
+}
+
+.b-story__author {
+    color: rgb(170, 170, 170);
+
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-size: 28px;
+
+    line-height: 28px;
+    margin-bottom: 56px;
+
+    text-align: center;
+
+    vertical-align: baseline;
+}
+
+.b-story__text {
+    line-height: 32px;
+
+    margin-bottom: 32px;
+
+    text-align: left;
+    text-indent: 2em;
+}
+
+
+.b-story__chapter {
+    font-size: 28px;
+    margin-bottom: 28px;
+}
+
+.b-ui
+{
+    position: fixed;
+    z-index: 99;
+    top:  0;
+    left:  0;
+
+    visibility: visible;
+
+    width: 100px;
+    height: 100%;
+}
+
+html {
+    border-top-color: transparent;
+}
+
+.b-ui__toolbar
+{
+    width: 300px;
+    height: 100%;
+
+     -webkit-transition: -webkit-transform 0.3s ease-out;
+
+    transform: translate(-285px,0);
+    -webkit-transform: translate(-285px,0);
+    -o-transform: translate(-285px,0);
+    -moz-transform: translate(-285px,0);
+
+    background-color: rgba(101, 166, 114, 0.9);
+}
+
+.b-ui:hover .b-ui__toolbar
+{
+    transform: translate(0,0);
+    -webkit-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+}
+
+.b-ui__top
+{
+    position: absolute;
+    top:  10px;
+    right:  20px;
+}
+
+.b-ui__all
+{
+    position: absolute;
+    top:  10px;
+    left:  15px;
+}
+
+.b-ui__link
+{
+    font-size: 16px;
+    white-space: nowrap;
+    color: #fff;
+
+    text-decoration: none;
+    text-shadow: none !important;
+}
+
+.b-ui__link:hover
+{
+    color: #000;
+}
+
+
+.b-ui__top:before
+{
+    font: 0.9em/1 Arial, sans-serif;
+
+    display: inline-block;
+
+    margin: -0.6em 0 0 -0.5rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+
+    content: "↑";
+    vertical-align: middle;
+}
+
+.b-ui__bottom
+{
+    position: absolute;
+    bottom:  10px;
+    left:  10px;
+}
+
+.b-toc
+{
+    position: absolute;
+    top: 7em;
+    left: 2em;
+
+    text-align: left;
+}
+
+.b-toc__link:first-child:before
+{
+    font: 0.9em/1 Arial, sans-serif;
+
+    position: absolute;
+    top:  0.2em;
+    left:  -0.7rem;
+
+    display: block;
+
+    content: "•";
+    color: #000;
+}
+
+.b-toc__link
+{
+    font-size:  16px;
+    line-height:  20px;
+
+    position: relative;
+
+    text-decoration: none;
+
+    color: #fbfaf4;
+    text-shadow: none !important;
+}
+
+.b-toc__link:hover
+{
+    color: #000;
+}
+
+.b-toc__title
+{
+    font-size:  100%;
+
+    margin-left:  -0.7em;
+
+    color: #000;
+
+    text-shadow: none !important;
+}
+
+.b-export
+{
+    position: absolute;
+    top: 3em;
+    left: 1em;
+
+    font-size: 16px;
+    width: 300px;
+    text-align: left;
+}
+
+.b-export__link
+{
+    color: #fbfaf4;
+
+    line-height:  1.6em;
+
+    text-decoration: underline;
+    text-shadow: none !important;
+}
+
+.b-export__link:hover
+{
+    color: #000;
+}
+
+.b-export__text
+{
+    color: #000;
+    display: inline;
+
+    line-height:  1.6em;
+
+    text-shadow: none !important;
+}

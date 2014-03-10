@@ -1,18 +1,24 @@
+var fs = require('fs');
 var jspath = require("jspath");
-var toc = require('storymill/list');
 var smCfg = require('storymill/config').get('storymill');
 
 module.exports = function (pages) {
-    pages.declare('index-page', function (params) {
+    pages.declare('book-page', function (params) {
         var options = params.options;
+        var request = params.query;
 
-        var projectUrls = smCfg.project;
-        var booksList = toc.getBookList(projectUrls);
-        var publishedBooksList = jspath.apply('.{.published === "yes"}', booksList);
+        var importUrl = smCfg.project.import;
+        var storyUrl = importUrl + request.id + '/' + request.id + '.sm.json';
+
+        console.log(storyUrl);
+
+        // Прочитать файл, получить JSON
+        var story = fs.readFileSync(storyUrl, 'utf8');
+//        console.log(story);
 
         return {
             block: 'page',
-            title: 'Повести и рассказы - Вадим Макишвили',
+            title: 'Книга',
             meta: [
                 // http://t.co/dKP3o1e
                 {
@@ -34,30 +40,27 @@ module.exports = function (pages) {
                     url: '/octopress/stylesheets/screen.css',
                     media: 'screen, projection'
                 },
-                {
-                    rules : '.category {text-align: left;} .day, .month, .year {font-size: 17px; color: #aaa; display: inline;}'
-                }
+                {url: '/libs/highlight/styles/default.css'}
             ],
             scripts: [
-                {url: options.assetsPath + '.js'},
                 {url: '/octopress/javascripts/modernizr-2.0.js'},
                 {url: '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'},
-                {url: '/octopress/javascripts/octopress.js'}
+                {url: '/octopress/javascripts/octopress.js'},
+                {url: '/libs/highlight/highlight.pack.js'},
+                {source: 'hljs.initHighlightingOnLoad();'}
             ],
             body: [
+/*
                 {
-                    block: 'header'
+                    block: 'debug',
+                    data: story
                 },
+*/
                 {
-                    block: 'nav'
-                },
-                {
-                    block: 'books',
-                    title: 'Повести и рассказы',
-                    list: publishedBooksList
-                },
-                {
-                    block: 'footer'
+                    block: 'story',
+                    title: story.title,
+                    author: story.author,
+                    text: story.body
                 }
             ]
         };
