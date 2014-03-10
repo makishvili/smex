@@ -43,3 +43,23 @@ block:
 # Run application in development mode
 app-dev:
 	@$(NPM_BIN)/supervisor -w server,configs -- server/boot.js
+
+
+
+# ====================================
+
+# Convert dirty storymill's html to json
+.PHONY: bookjson
+bookjson:
+	./tools/make-bookjson.sh
+
+# Make pdf for all my books
+.PHONY: bookpdf
+bookpdf:
+	./tools/make-bookpdf.sh
+
+# Make fb2 for all my books
+.PHONY: bookfb2
+bookfb2:
+	./tools/make-bookfb2.sh
+
