@@ -54,7 +54,13 @@ module.exports = function (bt) {
         ctx.setContent(ctx.getParam('content'));
     });
 
-    bt.match(['story__author', 'story__text'], function (ctx) {
+    bt.match('story__author', function (ctx) {
+        ctx.setAttr('id', ctx.getParam('id'));
+        ctx.setContent(ctx.getParam('content'));
+    });
+
+    bt.match('story__text', function (ctx) {
+        ctx.setTag('p');
         ctx.setAttr('id', ctx.getParam('id'));
         ctx.setContent(ctx.getParam('content'));
     });

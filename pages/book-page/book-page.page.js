@@ -13,8 +13,7 @@ module.exports = function (pages) {
         console.log(storyUrl);
 
         // Прочитать файл, получить JSON
-        var story = fs.readFileSync(storyUrl, 'utf8');
-//        console.log(story);
+        var story = JSON.parse(fs.readFileSync(storyUrl, 'utf8'));
 
         return {
             block: 'page',
